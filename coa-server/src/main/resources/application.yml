@@ -3,7 +3,7 @@ server:
 spring:
   application:
     name: coa-server
-  cloud:
-    nacos:
-      discovery:
-        server-addr:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.21.17.175:18081/eureka/,http://10.21.17.175:18082/eureka/,http://10.21.17.175:18083/eureka/
