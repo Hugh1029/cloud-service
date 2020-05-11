@@ -1,0 +1,9 @@
+server:
+  port: 9030
+spring:
+  application:
+    name: coa-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr:
