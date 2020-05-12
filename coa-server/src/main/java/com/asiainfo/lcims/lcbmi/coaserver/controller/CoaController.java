@@ -25,7 +25,7 @@ import java.util.Map;
 @RestController
 public class CoaController {
 
-    private static final Logger logger = LoggerFactory.getLogger(CoaController.class);
+    private static final Logger logger = LoggerFactory.getLogger("controller");
 
     @Autowired
     private OnlineService onlineService;
@@ -33,12 +33,12 @@ public class CoaController {
 
     @PostMapping("/kickoff")
     public String kickoff(@RequestBody String json) {
-        logger.info("request:" + json);
+        logger.info("request:{}", json);
         Gson gson = new Gson();
         CoaRequest coaRequest = gson.fromJson(json, CoaRequest.class);
         String onlineRequest = gson.toJson(new OnlineRequest(coaRequest));
         String response = onlineService.queryOnline(onlineRequest);
-        logger.info("response:" + response);
+        logger.info("query response:{}", response);
         OnlineResponse onlineResponse = gson.fromJson(response, OnlineResponse.class);
         if (onlineResponse.getOnlineList() == null || onlineResponse.getOnlineList().isEmpty()) {
             // 不存在的在线记录
@@ -52,9 +52,8 @@ public class CoaController {
         map.put("420", coaRequest.getApn());
         map.put("301", coaRequest.getSessionid());
         String operJson = gson.toJson(map);
-
         String operResp = onlineService.operateOnline(operJson);
-
+        logger.info("kick off response:{}", operResp);
         return operResp;
     }
 }

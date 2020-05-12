@@ -8,7 +8,14 @@ spring:
       discovery:
         service-name: coa-server
         prefer-ip-address: true
-        ip-address: 10.21.37.24
       host: 10.21.17.175
       port: 8510
+logging:
+  file:
+    path: /Users/zhangjp/workspace/log
+    name: ${logging.file.path}/coaserver-consul-01.log
+    max-history: 7
+    max-size: 500MB
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %m%n"
 
