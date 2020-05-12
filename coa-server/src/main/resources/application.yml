@@ -4,6 +4,10 @@ spring:
   application:
     name: coa-server
   cloud:
-    nacos:
+    consul:
       discovery:
-        server-addr:
+        service-name: coa-server
+        prefer-ip-address: true
+      host: 10.21.17.175
+      port: 8510
+

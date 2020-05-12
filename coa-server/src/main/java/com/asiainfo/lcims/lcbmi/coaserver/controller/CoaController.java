@@ -6,8 +6,11 @@ import com.asiainfo.lcims.lcbmi.coaserver.model.OnlineRequest;
 import com.asiainfo.lcims.lcbmi.coaserver.model.OnlineResponse;
 import com.asiainfo.lcims.lcbmi.coaserver.service.OnlineService;
 import com.google.gson.Gson;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,15 +22,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CoaController {
 
+    private static final Logger logger = LoggerFactory.getLogger(CoaController.class);
+
     @Autowired
     private OnlineService onlineService;
 
+
     @PostMapping("/kickoff")
-    public String kickoff(String json) {
+    public String kickoff(@RequestBody String json) {
+        logger.info("request:" + json);
         Gson gson = new Gson();
         CoaRequest coaRequest = gson.fromJson(json, CoaRequest.class);
         String onlineRequest = gson.toJson(new OnlineRequest(coaRequest));
         String response = onlineService.queryOnline(onlineRequest);
+        logger.info("response:" + response);
         OnlineResponse onlineResponse = gson.fromJson(response, OnlineResponse.class);
         if (onlineResponse.getOnlineList() == null || onlineResponse.getOnlineList().isEmpty()) {
             // 不存在的在线记录
