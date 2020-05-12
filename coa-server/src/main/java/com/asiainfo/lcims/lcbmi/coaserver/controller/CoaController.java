@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author zhangjp
  * @date 2020-05-09 16:39
@@ -42,7 +45,16 @@ public class CoaController {
             return gson.toJson(new CoaResponse("-1", "非在线用户"));
         }
         // 踢下线操作
+        Map<String ,String> map = new HashMap<>();
+        map.put("302", "2");
+        map.put("602", coaRequest.getMdn());
+        map.put("3", coaRequest.getNasip());
+        map.put("420", coaRequest.getApn());
+        map.put("301", coaRequest.getSessionid());
+        String operJson = gson.toJson(map);
 
-        return gson.toJson(new CoaResponse("0", "强制下线成功"));
+        String operResp = onlineService.operateOnline(operJson);
+
+        return operResp;
     }
 }

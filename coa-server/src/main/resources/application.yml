@@ -8,6 +8,7 @@ spring:
       discovery:
         service-name: coa-server
         prefer-ip-address: true
+        ip-address: 10.21.37.24
       host: 10.21.17.175
       port: 8510
 
