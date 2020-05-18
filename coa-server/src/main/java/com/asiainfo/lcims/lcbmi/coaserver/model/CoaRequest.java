@@ -11,8 +11,8 @@ import lombok.Data;
 @Data
 public class CoaRequest {
 
-    private String sessionid;
+    private String sessionId;
     private String mdn;
-    private String nasip;
+    private String nasIp;
     private String apn;
 }
