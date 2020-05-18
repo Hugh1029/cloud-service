@@ -3,7 +3,18 @@ server:
 spring:
   application:
     name: coa-server
-eureka:
-  client:
-    service-url:
-      defaultZone: http://10.21.17.175:18081/eureka/,http://10.21.17.175:18082/eureka/,http://10.21.17.175:18083/eureka/
+  cloud:
+    consul:
+      discovery:
+        service-name: coa-server
+        prefer-ip-address: true
+      host: 10.21.17.175
+      port: 8511
+logging:
+  file:
+    path: /Users/zhangjp/workspace/log
+    name: ${logging.file.path}/coaserver-consul-01.log
+    max-history: 7
+    max-size: 500MB
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %m%n"

@@ -14,12 +14,12 @@ import lombok.Data;
 @Data
 public class OnlineRequest {
     private String mdn;
-    private String sid;
+    private String apn;
 
     public OnlineRequest() {}
 
     public OnlineRequest(CoaRequest coaRequest) {
         this.mdn = coaRequest.getMdn();
-        this.sid = coaRequest.getSessionid();
+        this.apn = coaRequest.getApn();
     }
 }

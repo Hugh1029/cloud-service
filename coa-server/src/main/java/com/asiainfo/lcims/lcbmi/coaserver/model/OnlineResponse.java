@@ -2,7 +2,6 @@ package com.asiainfo.lcims.lcbmi.coaserver.model;
 
 import lombok.Data;
 
-import java.util.List;
 
 /**
  * @author zhangjp
@@ -12,7 +11,6 @@ import java.util.List;
 
 @Data
 public class OnlineResponse {
-    private String sid;
-    private List<OnlineInfo> onlineList;
-    private String appType;
+    private String error;
+    private String appInfo;
 }
