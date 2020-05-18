@@ -11,5 +11,5 @@ done
 WORK_HOME="/home/lcims/work/zhangjp/coa-server"
 
 cd ${WORK_HOME}
-nohup /home/lcims/app/jdk1.8.0_161/bin/java -Dtarget=${RunFlag} -Dspring.config.location=${WORK_HOME}/config/application-consul.yml -Dserver.port=9031 -jar ${WORK_HOME}/jar/coa-server-consul.jar >/dev/null 2>&1 &
+nohup /home/lcims/app/jdk1.8.0_161/bin/java -Dtarget=${RunFlag} -Dspring.config.location=${WORK_HOME}/conf/application-consul.yml -Dserver.port=9031 -Dlogging.file.name=${WORK_HOME}/logs/coaserver-consul-01.log -jar ${WORK_HOME}/jar/coa-server-consul-1.0.0.jar >/dev/null 2>&1 &
 echo $cur_date, server is started! >> ${WORK_HOME}/logs/console.log 2>&1
