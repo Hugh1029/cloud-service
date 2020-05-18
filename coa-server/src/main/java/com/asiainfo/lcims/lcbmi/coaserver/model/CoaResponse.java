@@ -9,11 +9,12 @@ import lombok.Data;
  */
 @Data
 public class CoaResponse {
-    private String code;
-    private String message;
+    private String success;
+    private String error;
+    private String appInfo;
 
-    public CoaResponse(String code, String message) {
-        this.code = code;
-        this.message = message;
+    public CoaResponse(String error, String appInfo) {
+        this.error = error;
+        this.appInfo = appInfo;
     }
 }

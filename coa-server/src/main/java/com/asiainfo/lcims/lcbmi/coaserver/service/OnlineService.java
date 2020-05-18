@@ -3,6 +3,8 @@ package com.asiainfo.lcims.lcbmi.coaserver.service;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author zhangjp
@@ -17,7 +19,7 @@ public interface OnlineService {
      * @param onlineRequest
      * @return
      */
-    @GetMapping("/online/query")
+    @GetMapping(value = "/onlineserver/aitest/1.0/online/query")
     String queryOnline(String onlineRequest);
 
     /**
@@ -25,7 +27,7 @@ public interface OnlineService {
      * @param operateReq
      * @return
      */
-    @PostMapping("/online/operate")
-    String operateOnline(String operateReq);
+    @PostMapping("/onlineserver/aitest/1.0/online/delete")
+    String deleteOnline(String operateReq);
 
 }

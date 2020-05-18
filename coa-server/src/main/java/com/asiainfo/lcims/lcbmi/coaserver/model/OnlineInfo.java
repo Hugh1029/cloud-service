@@ -14,10 +14,12 @@ import lombok.Data;
 @Data
 public class OnlineInfo {
     private String mdn;
-    private String nasip;
-    private String username;
+    private String apn;
+    private String userName;
+    private String frameIp;
     private String imsi;
-    private String sessionid;
-    private String frameip;
-    private Integer timelen;
+    private String nasIp;
+    private String sessionId;
+    private String timeLen;
+    private String appInfo;
 }

@@ -21,7 +21,7 @@ public class OnlineServiceImpl implements OnlineService {
     }
 
     @Override
-    public String operateOnline(String operateReq) {
+    public String deleteOnline(String operateReq) {
         return new Gson().toJson(new CoaResponse("-1", "在线服务调用失败"));
     }
 }

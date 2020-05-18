@@ -9,7 +9,7 @@ spring:
         service-name: coa-server
         prefer-ip-address: true
       host: 10.21.17.175
-      port: 8510
+      port: 8511
 logging:
   file:
     path: /Users/zhangjp/workspace/log
@@ -18,4 +18,3 @@ logging:
     max-size: 500MB
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss} - %m%n"
-
