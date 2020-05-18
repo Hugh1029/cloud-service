@@ -23,14 +23,9 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>io.github.openfeign</groupId>
@@ -61,7 +56,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <!--<resources>
+        <resources>
             <resource>
                 <filtering>true</filtering>
                 <directory>src/main/resources</directory>
@@ -69,6 +64,6 @@
                     <exclude>application.yml</exclude>
                 </excludes>
             </resource>
-        </resources>-->
+        </resources>
     </build>
 </project>

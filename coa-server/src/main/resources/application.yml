@@ -4,12 +4,9 @@ spring:
   application:
     name: coa-server
   cloud:
-    consul:
+    nacos:
       discovery:
-        service-name: coa-server
-        prefer-ip-address: true
-      host: 10.21.17.175
-      port: 8511
+        server-addr: 10.21.17.175:8848,10.21.17.175:8849,http://10.21.17.175:8850
 logging:
   file:
     path: /Users/zhangjp/workspace/log
