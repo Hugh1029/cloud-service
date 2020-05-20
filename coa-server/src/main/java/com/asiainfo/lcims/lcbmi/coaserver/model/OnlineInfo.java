@@ -16,7 +16,7 @@ public class OnlineInfo {
     private String mdn;
     private String apn;
     private String userName;
-    private String frameIp;
+    private String framedIp;
     private String imsi;
     private String nasIp;
     private String sessionId;
